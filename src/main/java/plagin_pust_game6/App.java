@@ -1,5 +1,6 @@
 package plagin_pust_game6;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -11,15 +12,18 @@ public class App extends JavaPlugin
 
         @Override
         public void onEnable() {
-        getLogger().info("Плагин запущен!");
+                getLogger().info("Плагин запущен!");
 
-        // Регистрируем обработчик событий
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+                Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+                Bukkit.getPluginManager().registerEvents(new TeleportListener(), this);
         }
+
 
         @Override
         public void onDisable() {
-        getLogger().info("Плагин остановлен.");
+
+                getLogger().info("Плагин остановлен.");
+
         }
 
 }
